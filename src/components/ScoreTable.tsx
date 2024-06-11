@@ -9,6 +9,7 @@ export const ScoreTable: React.FC<ScoreTableProps> = ({scores, players}) => {
         }
     return acc;
     }, {} as {[key: string]: number});
+    
 
     return(
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -24,7 +25,7 @@ export const ScoreTable: React.FC<ScoreTableProps> = ({scores, players}) => {
             <tbody>
                 {players.map((player) => (
                     <tr className = "bg-white border-b dark:bg-gray-800 dark:border-gray-700" key = {player.id}>
-                        <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{player.name}</td>
+                        <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white capitalize">{player.name}</td>
                         {scores.map((round, i) => (
                             <td className="px-6 py-4" key={i}>{round.scores[player.id] || 0 }</td>
                         ))}
@@ -35,3 +36,4 @@ export const ScoreTable: React.FC<ScoreTableProps> = ({scores, players}) => {
         </table>
     );
 };
+

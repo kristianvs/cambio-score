@@ -13,17 +13,17 @@ export const PlayerForm : React.FC<PlayerFormProps>  = ({addPlayer}) => {
         }
     };
     return(
-        <div className ="p-4 w-fit bg-blue-700 border rounded-md">
-            <form onSubmit = {handleSubmit}>
+        <div className ="flex justify-center  lg:text-xl md:text-lg sm:text-md mt-4">
+            <form className = "flex items-center bg-blue-700 p-4 rounded-3xl shadow-2xl border-2 space-x-2" onSubmit = {handleSubmit}>
                 <input 
-                    className=""
+                    className="rounded-lg"
                     type="text"
                     value ={name}
                     onChange={((e) => setName(e.target.value))}
-                    placeholder='Enter name'
+                    placeholder='Enter name...'
 
                 />
-                <button type = "submit" className="ml-2 rounded-md p-2 bg-blue-500 hover:bg-blue-700"> Add Player</button>
+                <button type = "submit" className="ml-2 font-semibold rounded-md p-2 bg-blue-500 hover:bg-green-700 shadow-xl border-2"> Add Player</button>
             </form>
 
 
